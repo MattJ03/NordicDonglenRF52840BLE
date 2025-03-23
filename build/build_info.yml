@@ -51,6 +51,6 @@ cmake:
     zephyr-base: /home/matt/ncs/zephyr
 version: 0.1.0
 west:
-  command: /home/matt/zephyr-python/bin/west build -b nrf52840dongle_nrf52840
+  command: /home/matt/zephyr-python/bin/west build -b nrf52840dongle -p always
   topdir: /home/matt/ncs
   version: 1.3.0

@@ -8,10 +8,10 @@
 
 static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(LED_NODE, gpios);
 
-void main(void) {
+int main(void) {
 
 	if(!device_is_ready(led.port)) {
-		printf("The device is not in a state to be configured%s\n");
+		printf("The device is not in a state to be configured\n");
 		return;  //led not ready try again 
 	}
 
