@@ -11,7 +11,14 @@ void main(void) {
 
 	if(!device_is_ready(led.port)) {
 		printf("The device is not in a state to be configured%s\n");
-		return 1;
+		return 1;  //led not ready try again 
+	}
+
+	gpio_pin_configure_dt(&led, GPIO_OUTPUT_ACTIVE);
+
+	while(1) {
+		gpio_pin_toggle_dt(&led);
+		k_msleep(500);
 	}
 
 }
