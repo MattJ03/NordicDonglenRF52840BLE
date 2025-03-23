@@ -4,7 +4,7 @@
 #include <zephyr/drivers/gpio.h>
 #include <stdio.h>
 
-#define LED_NODE_DT_ALIAS(led0)  //will get the dongle from the DT, led0 is the first device 
+#define LED_NODE DT_ALIAS(led0)  //will get the dongle from the DT, led0 is the first device 
 
 static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(LED_NODE, gpios);
 
