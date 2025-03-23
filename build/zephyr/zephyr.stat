@@ -44,9 +44,9 @@ Section Headers:
   [20] usb_cfg_data_area PROGBITS        200002b8 009120 000024 00  WA  0   0  4
   [21] .comment          PROGBITS        00000000 009148 000020 01  MS  0   0  1
   [22] .debug_aranges    PROGBITS        00000000 009168 001b90 00      0   0  8
-  [23] .debug_info       PROGBITS        00000000 00acf8 060525 00      0   0  1
-  [24] .debug_abbrev     PROGBITS        00000000 06b21d 00f569 00      0   0  1
-  [25] .debug_line       PROGBITS        00000000 07a786 02b055 00      0   0  1
+  [23] .debug_info       PROGBITS        00000000 00acf8 060524 00      0   0  1
+  [24] .debug_abbrev     PROGBITS        00000000 06b21c 00f569 00      0   0  1
+  [25] .debug_line       PROGBITS        00000000 07a785 02b055 00      0   0  1
   [26] .debug_frame      PROGBITS        00000000 0a57dc 004354 00      0   0  4
   [27] .debug_str        PROGBITS        00000000 0a9b30 00f2db 01  MS  0   0  1
   [28] .debug_loc        PROGBITS        00000000 0b8e0b 02c3f5 00      0   0  1
