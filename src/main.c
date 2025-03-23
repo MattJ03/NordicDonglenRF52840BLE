@@ -19,7 +19,7 @@ int main(void) {
 
 	while(1) {
 		gpio_pin_toggle_dt(&led);
-		k_msleep(500);
+		k_msleep(100);
 	}
 
 }
