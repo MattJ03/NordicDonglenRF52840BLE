@@ -29,7 +29,7 @@ static void connected(struct bt_conn *con, uint8_t err) {
 		int err; 
 
 		printk("Starting Bluetooth scan...\n");
-
+        err = bt_enable(NULL);
 		if(err) {
 			printk("Bluetooth init failed.\n");
 			return;
@@ -42,11 +42,12 @@ static void connected(struct bt_conn *con, uint8_t err) {
         BT_DATA(BT_DATA_NAME_COMPLETE, DEVICE_NAME, DEVICE_NAME_LEN),
 		};
 
-		err = bt_le_adv_param(adv_params, ad, ARRAY_SIZE(ad), NULL, 0);
+		err = bt_le_adv_start(adv_params, ad, ARRAY_SIZE(ad), NULL, 0);
 		if(err) {
 			printk("Advertisement failed\n");
 			return;
 		}
 
 		printk("Advertisment started\n");
+		return 0;
 	}
