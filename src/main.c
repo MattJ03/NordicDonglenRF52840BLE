@@ -1,7 +1,7 @@
 #include <zephyr/bluetooth/bluetooth.h>
 #include <zephyr/bluetooth/hci.h>
 
-int main(void)
+void main(void)
 {
     int err;
 
@@ -13,12 +13,18 @@ int main(void)
     }
     printk("Bluetooth initialized\n");
 
-    // Define advertising parameters correctly
+    // Define advertising parameters
     const struct bt_le_adv_param *adv_param = BT_LE_ADV_PARAM(
-        BT_LE_ADV_OPT_CONN, BT_GAP_ADV_FAST_INT_MIN_2, BT_GAP_ADV_FAST_INT_MAX_2, NULL);
+        BT_LE_ADV_OPT_CONN, 0x20, 0x40, NULL);  // 32ms to 64ms interval
+
+    // Advertising data (including name)
+    static const struct bt_data ad[] = {
+        BT_DATA_BYTES(BT_DATA_FLAGS, BT_LE_AD_NO_BREDR),
+        BT_DATA(BT_DATA_NAME_COMPLETE, "Zephyr_Device", 14),  // Advertise with name
+    };
 
     // Start advertising
-    err = bt_le_adv_start(adv_param, NULL, 0, NULL, 0);
+    err = bt_le_adv_start(adv_param, ad, ARRAY_SIZE(ad), NULL, 0);
     if (err) {
         printk("Advertising failed to start (err %d)\n", err);
     } else {
@@ -29,6 +35,4 @@ int main(void)
     while (1) {
         k_sleep(K_SECONDS(1));
     }
-
-	return 0;
 }
