@@ -1,3 +1,55 @@
+cmake:
+  application:
+    configuration-dir: /home/matt/ncs/zephyr/samples/hello_world
+    source-dir: /home/matt/ncs/zephyr/samples/hello_world
+  board:
+    name: nrf52840dongle
+    path:
+     - /home/matt/ncs/zephyr/boards/nordic/nrf52840dongle
+    qualifiers: nrf52840
+    revision: 
+  devicetree:
+    bindings-dirs:
+     - /home/matt/ncs/zephyr/dts/bindings
+    files:
+     - /home/matt/ncs/zephyr/boards/nordic/nrf52840dongle/nrf52840dongle_nrf52840.dts
+    include-dirs:
+     - /home/matt/ncs/modules/hal/atmel/include
+     - /home/matt/ncs/modules/hal/gigadevice/include
+     - /home/matt/ncs/modules/hal/microchip/include
+     - /home/matt/ncs/modules/hal/microchip/dts
+     - /home/matt/ncs/modules/hal/nuvoton/dts
+     - /home/matt/ncs/modules/hal/nxp/dts
+     - /home/matt/ncs/modules/hal/stm32/dts
+     - /home/matt/ncs/zephyr/include
+     - /home/matt/ncs/zephyr/include/zephyr
+     - /home/matt/ncs/zephyr/dts/common
+     - /home/matt/ncs/zephyr/dts/x86
+     - /home/matt/ncs/zephyr/dts/xtensa
+     - /home/matt/ncs/zephyr/dts/sparc
+     - /home/matt/ncs/zephyr/dts/riscv
+     - /home/matt/ncs/zephyr/dts/posix
+     - /home/matt/ncs/zephyr/dts/nios2
+     - /home/matt/ncs/zephyr/dts/arm64
+     - /home/matt/ncs/zephyr/dts/arm
+     - /home/matt/ncs/zephyr/dts/arc
+     - /home/matt/ncs/zephyr/dts
+  kconfig:
+    files:
+     - /home/matt/ncs/zephyr/boards/nordic/nrf52840dongle/nrf52840dongle_nrf52840_defconfig
+     - /home/matt/ncs/zephyr/samples/hello_world/prj.conf
+    user-files:
+     - /home/matt/ncs/zephyr/samples/hello_world/prj.conf
+  toolchain:
+    name: zephyr
+    path: /home/matt/Downloads/zephyr-sdk-0.16.4
+  vendor-specific:
+    nordic:
+      svdfile: /home/matt/ncs/modules/hal/nordic/nrfx/mdk/nrf52840.svd
+  zephyr:
+    version: 4.1.99
+    zephyr-base: /home/matt/ncs/zephyr
+version: 0.1.0
 west:
   command: /home/matt/zephyr-python/bin/west build -b nrf52840dongle -p always
   topdir: /home/matt/ncs
