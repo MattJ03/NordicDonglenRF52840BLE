@@ -14,7 +14,7 @@ int main()
     printk("Bluetooth initialized\n");
 
     // Define advertising parameters correctly
-    struct bt_le_adv_param *adv_param = BT_LE_ADV_PARAM(
+    const struct bt_le_adv_param *adv_param = BT_LE_ADV_PARAM(
         BT_LE_ADV_OPT_CONN, BT_GAP_ADV_FAST_INT_MIN_2, BT_GAP_ADV_FAST_INT_MAX_2, NULL);
 
     // Start advertising
