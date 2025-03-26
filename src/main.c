@@ -1,7 +1,7 @@
 #include <zephyr/bluetooth/bluetooth.h>
 #include <zephyr/bluetooth/hci.h>
 
-int main()
+int main(void)
 {
     int err;
 
